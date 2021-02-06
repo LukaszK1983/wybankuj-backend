@@ -14,7 +14,7 @@ import java.io.File;
 public class EmailService {
 
     private final static Logger logger = LogManager.getLogger(EmailService.class);
-    private final static String MAIL_SENDER = "wnioski@wybankuj.pl";
+    private final static String MAIL_SENDER = "kontakt@wybankuj.pl";
     private final JavaMailSender javaMailSender;
 
     public EmailService(JavaMailSender javaMailSender) {
@@ -56,43 +56,12 @@ public class EmailService {
                             "</html>", true
             );
             helper.addInline("logo", new File("/users/myszkaimisiek/desktop/kurs/wybankuj/src/main/webapp/img/logo.png"));
-//            helper.setText(content, true);
             javaMailSender.send(mail);
             logger.info("Wiadomość została wysłana - " + title);
         } catch (MessagingException e) {
             logger.warn("Wiadomość NIE została wysłana!");
         }
     }
-
-//    public SimpleMailMessage templateMessageForAgency(
-//            String credit, String offer, int amount, int creditPeriod,
-//            String phone, String email, String name) {
-//        SimpleMailMessage message = new SimpleMailMessage();
-//        message.setText(
-//                "<html>" +
-//                        "<body>" +
-//                        "<a href=\"www.wybankuj.herokuapp.com\">" +
-////                   "<img src=\"/img/logo.png\" alt='Wybankuj.pl' width='50px' height='20px' />" +
-//                        "<img src='cid:logo' style='float: left; width: 50px; height: 2-px;' />" +
-//                        "</a>" +
-//                        "<br /><br />" +
-//                        "<div style='margin: auto; padding: 0; border: 0; border-bottom: 1em solid #1C3752; box-shadow: 0 4px 2px -2px #BF4042;'>"
-//                        + "WYBANKUJ</div><br /><br />" +
-//                        "Dzień dobry, <br /><br />" +
-//                        "interesuje mnie kredyt " + credit + " o poniższych parametrach: <br /><br />" +
-//                        "1. oferta - " + offer + "<br />" +
-//                        "2. kwota - " + amount + " zł <br />" +
-//                        "3. okres kredytowania - " + creditPeriod + " miesięcy <br /><br />" +
-//                        "Proszę o kontakt: <br /><br />" +
-//                        "- nr telefonu - " + phone + "<br />" +
-//                        "- e-mail - " + email + "<br /><br />" +
-//                        "Pozdrawiam, <br />" +
-//                        "" + name + "" +
-//                        "</body>" +
-//                        "</html>"
-//        );
-//        return message;
-//    }
 
     public void sendToUser(String to, String title,
                      String agencyBank) {
@@ -130,25 +99,10 @@ public class EmailService {
                             "</html>", true
             );
             helper.addInline("logo", new File("/users/myszkaimisiek/desktop/kurs/wybankuj/src/main/webapp/img/logo.png"));
-//            helper.setText(content, true);
             javaMailSender.send(mail);
             logger.info("Wiadomość została wysłana - " + title);
         } catch (MessagingException e) {
             logger.warn("Wiadomość NIE została wysłana!");
         }
     }
-
-//    public SimpleMailMessage templateMessageForCustomer(
-//            String agencyBank, String agencyName2) {
-//        SimpleMailMessage message = new SimpleMailMessage();
-//        message.setText(
-//                "Dzień dobry, <br /><br />" +
-//                        "Twoja wiadomość została przesłana do " +
-//                        "" + agencyBank + " - " + agencyName2 + ".<br />" +
-//                        "Pracownik banku skontaktuje się w ciągu 1 dnia roboczego i zaproponuje termin spotkania.<br /><br />" +
-//                        "Pozdrawiamy, <br />" +
-//                        "Zespół Wybankuj.pl"
-//        );
-//        return message;
-//    }
 }
