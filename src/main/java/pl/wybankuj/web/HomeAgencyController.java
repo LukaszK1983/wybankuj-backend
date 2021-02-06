@@ -42,7 +42,7 @@ public class HomeAgencyController {
         String title2 = "Nowe zapytanie o kredyt gotówkowy: " + agencyBank + " - " + name + "";
 
         emailService.send("bank@wybankuj.pl", title, "gotówkowy", offer, amount, creditPeriod, phone, email, name);
-        emailService.send("wnioski@wybankuj.pl", title2, "gotówkowy", offer, amount, creditPeriod, phone, email, name);
+        emailService.send("kontakt@wybankuj.pl", title2, "gotówkowy", offer, amount, creditPeriod, phone, email, name);
 
         String title3 = "Wiadomość z Wybankuj.pl";
         emailService.sendToUser(email, title3, agencyBank);
@@ -67,7 +67,7 @@ public class HomeAgencyController {
         String title2 = "Nowe zapytanie o kredyt hipoteczny: " + agencyBank + " - " + name + "";
 
         emailService.send("bank@wybankuj.pl", title, "hipoteczny", offer, amount, creditPeriod, phone, email, name);
-        emailService.send("wnioski@wybankuj.pl", title2, "hipoteczny", offer, amount, creditPeriod, phone, email, name);
+        emailService.send("kontakt@wybankuj.pl", title2, "hipoteczny", offer, amount, creditPeriod, phone, email, name);
 
         String title3 = "Wiadomość z Wybankuj.pl";
         emailService.sendToUser(email, title3, agencyBank);
